@@ -12,6 +12,12 @@ function MessageInput({sendMessage}){ //accepting sendMessage as a prop
         }
     }
 
+    const handleKeyDown = (e) => {
+        if (e.key === "Enter") {
+            handleSend();
+        }
+    };
+
     return(
         <div className ="chat-input">
             
@@ -19,6 +25,7 @@ function MessageInput({sendMessage}){ //accepting sendMessage as a prop
                 type="text"
                 value={message}
                 onChange={(e) =>setMessage(e.target.value)}
+                onKeyDown={handleKeyDown}
                 placeholder="Type a message..."
                 />
             <button onClick={handleSend}>Send</button>
