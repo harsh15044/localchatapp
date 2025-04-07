@@ -4,7 +4,7 @@ import MessageInput from "./components/MessageInput";
 import "./App.css";
 import {io} from "socket.io-client";
 
-const socket = io("localhost:5500"); //connecting to backend
+const socket = io("https://localchatapp.onrender.com:5500"); //connecting to backend
 
 
 function App() {
