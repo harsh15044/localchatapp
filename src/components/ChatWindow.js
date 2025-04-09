@@ -4,6 +4,9 @@ import React, { useEffect, useRef } from "react";
 // const socket = io("http://localhost:5500");
 
 function ChatWindow({messages, username}){
+    const endOfMessagesRef = useRef(null);//for smooth scrolling
+
+
     useEffect(() =>{
         console.log("update messages in chatwindow :", messages);
         endOfMessagesRef.current?.scrollIntoView({ behavior: "smooth" });
