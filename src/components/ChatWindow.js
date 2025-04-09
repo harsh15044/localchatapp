@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 // import {io} from "socket.io-client";
 
 // const socket = io("http://localhost:5500");
@@ -6,6 +6,7 @@ import React, { useEffect } from "react";
 function ChatWindow({messages, username}){
     useEffect(() =>{
         console.log("update messages in chatwindow :", messages);
+        endOfMessagesRef.current?.scrollIntoView({ behavior: "smooth" });
     }, [messages]);
 
     return (
@@ -26,6 +27,7 @@ function ChatWindow({messages, username}){
                                 </span>
                                 <span className="message-text">{msg.message}</span>
                             </div>
+                            <div ref={endOfMessagesRef} /> 
                         </div> //displaying the message
                     ))
                 )}
